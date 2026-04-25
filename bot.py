@@ -1571,12 +1571,12 @@ if __name__ == '__main__':
     updater1 = Updater(SALES_BOT_TOKEN, workers=8, request_kwargs={'read_timeout': 30, 'connect_timeout': 30})
     app = SAPSalesBot()
     app.setup_dispatcher(updater1.dispatcher)
-    updater1.start_polling()
+    # updater1.start_polling()  # COMMENTED FOR VERCEL WEBHOOK
 
     logger.info("Starting Manager Bot...")
     updater2 = Updater(MANAGER_BOT_TOKEN, workers=8, request_kwargs={'read_timeout': 30, 'connect_timeout': 30})
     app.setup_dispatcher(updater2.dispatcher)
-    updater2.start_polling()
+    # updater2.start_polling()  # COMMENTED FOR VERCEL WEBHOOK
 
     # Start background scheduler for smart alerts
     try:
@@ -1602,5 +1602,5 @@ if __name__ == '__main__':
     except Exception as e:
         logger.warning("Security cleanup thread failed (non-critical): %s", e)
 
-    logger.info("Both bots are now online and polling.")
-    updater1.idle()
+    logger.info("Both bots are now online and ready for Webhook.")
+    # updater1.idle()  # COMMENTED FOR VERCEL WEBHOOK
