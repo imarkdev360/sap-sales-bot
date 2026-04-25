@@ -1,0 +1,21 @@
+# Core
+python-telegram-bot==13.7
+requests==2.28.2
+flask==2.3.3
+
+# AI / Vision
+google-generativeai>=0.3.0
+Pillow>=9.0.0
+
+# Configuration
+python-dotenv>=1.0.0
+
+# Werkzeug pinned for Flask 2.3 compatibility
+Werkzeug>=2.3.0,<3.0.0
+
+# Background Scheduler
+APScheduler>=3.6.3
+
+# Security
+cryptography>=41.0.0
+markupsafe>=2.1.0

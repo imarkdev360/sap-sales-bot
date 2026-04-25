@@ -1,0 +1,31 @@
+# Environment & Secrets
+.env
+.env.*
+
+# Database
+*.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temp files
+receipt_*.jpg
+receipt_*.png
+*.tmp
+
+# Logs
+*.log
+sap_bot.log
