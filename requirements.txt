@@ -19,3 +19,4 @@ APScheduler>=3.6.3
 # Security
 cryptography>=41.0.0
 markupsafe>=2.1.0
+setuptools
