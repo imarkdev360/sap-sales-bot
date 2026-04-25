@@ -4,6 +4,7 @@ from datetime import datetime
 from config import DB_NAME
 from logger_setup import get_logger
 from pii_masker import mask_pii
+import os
 
 logger = get_logger(__name__)
 
@@ -13,7 +14,8 @@ ALL_MODULES = ['dashboard', 'customer', 'sales', 'material', 'expense', 'Notific
 
 class DatabaseHandler:
     def __init__(self):
-        self.conn = sqlite3.connect(DB_NAME, check_same_thread=False)
+        db_path = '/tmp/sap_bot.db' if os.environ.get('VERCEL') == '1' else '/tmp/sap_bot.db'
+        self.conn = sqlite3.connect(db_path, check_same_thread=False)
         self.conn.row_factory = sqlite3.Row
         # Enable WAL mode for better concurrent read/write performance
         self.conn.execute("PRAGMA journal_mode=WAL")
